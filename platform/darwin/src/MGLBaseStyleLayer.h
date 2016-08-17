@@ -14,4 +14,6 @@
  */
 @property (nonatomic, assign) float minimumZoomLevel;
 
+@property (nonatomic) NSPredicate *predicate;
+
 @end
