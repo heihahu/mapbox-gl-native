@@ -30,6 +30,7 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.circleRadius;
 
 public class CircleLayerActivity extends AppCompatActivity {
 
+    private MapboxMap mapboxMap;
     private MapView mapView;
     private Layer circleLayer;
 
@@ -51,8 +52,8 @@ public class CircleLayerActivity extends AppCompatActivity {
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
-            public void onMapReady(@NonNull final MapboxMap mapboxMap) {
-                mapboxMap.setStyleUrl(Style.OUTDOORS);
+            public void onMapReady(@NonNull final MapboxMap map) {
+                mapboxMap = map;
                 FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
                 fab.setColorFilter(ContextCompat.getColor(CircleLayerActivity.this, R.color.primary));
                 fab.setOnClickListener(new View.OnClickListener() {
